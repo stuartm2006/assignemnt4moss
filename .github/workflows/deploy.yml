@@ -35,10 +35,15 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Show built files
+        run: |
+          ls dist
+          cat dist/index.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     environment:
