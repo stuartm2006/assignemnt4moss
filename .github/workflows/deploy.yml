@@ -35,9 +35,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Show built files
+      - name: Show project root
+        run: |
+          ls
+          echo "----- root index.html -----"
+          cat index.html
+
+      - name: Show built output
         run: |
           ls dist
+          echo "----- dist/index.html -----"
           cat dist/index.html
 
       - name: Upload Pages artifact
